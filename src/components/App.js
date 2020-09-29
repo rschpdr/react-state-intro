@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import Counter from "./Counter";
+
 // React Hooks
 
 // Hooks permitem componentes funcionais que antes so podiam ser de apresentaçāo passar a ter state
@@ -30,6 +32,8 @@ function App() {
         Time now is:
         {" " + state.hours}:{state.minutes}:{state.seconds}
       </h3>
+
+      <Counter />
     </div>
   );
 }
