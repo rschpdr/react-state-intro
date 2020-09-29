@@ -1,5 +1,7 @@
 import React from "react";
 
+import Counter from "./Counter";
+
 class App extends React.Component {
   state = {
     hours: 0,
@@ -34,6 +36,8 @@ class App extends React.Component {
           Time now is:
           {" " + this.state.hours}:{this.state.minutes}:{this.state.seconds}
         </h3>
+
+        <Counter />
       </div>
     );
   }
