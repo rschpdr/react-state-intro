@@ -1,33 +1,28 @@
 import React from "react";
 
 class Counter extends React.Component {
-  // State inicial
+  // O state sempre é um atributo que recebe um objeto literal
   state = {
     count: 0,
   };
 
-  // Usamos arrow function aqui porque arrow functions nao criam um novo, entao o this vai se referir a classe
-
-  // Metodo a ser executado quando o usuario clica no botao de +
-  onIncrement = () => {
-    // Atualizando o state utilizando o valor anterior do state atraves da funcao callback de setState
-    this.setState((previousState) => {
-      return { count: previousState.count++ };
-    });
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
   };
 
-  // Metodo a ser executado quando o usuario clica no botao de -
-  onDecrement = () => {
-    this.setState((previousState) => ({ count: previousState.count-- }));
+  handleDecrement = () => {
+    this.setState({ count: this.state.count - 1 });
   };
 
   render() {
+    // Cada vez que nós invocamos o método setState, o React invoca novamente o método render, fazendo o random() gerar um novo número aleatório em cada renderização
+    // console.log(Math.random());
+
     return (
       <div>
-        {/* Passando referencia do metodo pra ser executado quando o evento click acontecer */}
-        <button onClick={this.onDecrement}>-</button>
-        <span style={{ padding: "10px" }}>{this.state.count}</span>
-        <button onClick={this.onIncrement}>+</button>
+        <button onClick={this.handleDecrement}>-</button>
+        <span style={{ padding: "1rem" }}>{this.state.count}</span>
+        <button onClick={this.handleIncrement}>+</button>
       </div>
     );
   }

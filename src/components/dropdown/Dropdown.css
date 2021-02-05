@@ -1,0 +1,25 @@
+.dropdown {
+  position: absolute;
+  border: 1px solid black;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.dropdown li {
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+}
+
+.show {
+  display: block;
+}
+
+.drop-button {
+  border: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  font-size: smaller;
+}
